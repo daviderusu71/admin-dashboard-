@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>Dashboard</h2>
+
+<ul>
+
+<li onclick="showSection('home')">Home</li>
+<li onclick="showSection('users')">Users</li>
+<li onclick="showSection('orders')">Orders</li>
+<li onclick="showSection('products')">Products</li>
+<li onclick="showSection('settings')">Settings</li>
+
+</ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- HOME -->
+
+<div id="home-section">
+
+<h1>Admin Dashboard</h1>
+
+<button onclick="toggleDarkMode()" class="dark-btn">
+Toggle Dark Mode
+</button>
+
+<div class="card">
+<h3>Users</h3>
+<p id="users-count" data-target="1200">0</p>
+</div>
+
+<div class="card">
+<h3>Orders</h3>
+<p class="counter" data-target="350">0</p>
+</div>
+
+<div class="card">
+<h3>Revenue</h3>
+<p class="counter" data-target="12500">0</p>
+</div>
+
+<div class="charts">
+
+<canvas id="salesChart"></canvas>
+<canvas id="usersChart"></canvas>
+
+</div>
+
+</div>
+
+
+<!-- USERS -->
+
+<div id="users-section" style="display:none;">
+
+<h2>Add User</h2>
+
+<div class="user-form">
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+
+<select id="role">
+<option>Admin</option>
+<option>User</option>
+</select>
+
+<button onclick="addUser()">Add User</button>
+
+</div>
+
+<input type="text" id="search-user" placeholder="Search user..." onkeyup="searchUser()">
+
+<h2>Users</h2>
+
+<table class="users-table">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="user-list">
+
+<tr>
+<td>John Doe</td>
+<td>john@email.com</td>
+<td>Admin</td>
+<td><button onclick="deleteUser(this)">Delete</button></td>
+</tr>
+
+<tr>
+<td>Anna Smith</td>
+<td>anna@email.com</td>
+<td>User</td>
+<td><button onclick="deleteUser(this)">Delete</button></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- ORDERS -->
+
+<div id="orders-section" style="display:none;">
+
+<h2>Orders</h2>
+
+<table class="users-table">
+
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Total</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>#1001</td>
+<td>John Doe</td>
+<td>€45</td>
+<td>Completed</td>
+</tr>
+
+<tr>
+<td>#1002</td>
+<td>Anna Smith</td>
+<td>€29</td>
+<td>Pending</td>
+</tr>
+
+<tr>
+<td>#1003</td>
+<td>Michael Lee</td>
+<td>€62</td>
+<td>Shipped</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div id="products-section" style="display:none;">
+
+<h2>Products</h2>
+
+<table class="users-table">
+
+<thead>
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Stock</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Laptop</td>
+<td>€900</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td>€600</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Headphones</td>
+<td>€120</td>
+<td>35</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- SETTINGS -->
+
+<div id="settings-section" style="display:none;">
+
+<h2>Settings</h2>
+
+<div class="user-form">
+
+<label>Site Name</label>
+<input type="text" placeholder="My Dashboard">
+
+<label>Email Notifications</label>
+<select>
+<option>Enabled</option>
+<option>Disabled</option>
+</select>
+
+<button>Save Settings</button>
+
+</div>
+
+</div>
+
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

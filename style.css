@@ -1,0 +1,172 @@
+body{
+margin:0;
+font-family:Arial;
+background:#f1f5f9;
+}
+
+.dashboard{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:200px;
+background:#020617;
+color:white;
+padding:20px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+margin:15px 0;
+cursor:pointer;
+}
+
+.main{
+flex:1;
+padding:40px;
+}
+
+.cards{
+display:flex;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:200px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.users-table tr:hover{
+background:#f1f5f9;
+}
+
+.charts{
+display:flex;
+gap:30px;
+margin-top:40px;
+}
+
+.charts canvas{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:400px;
+}
+
+.users-table{
+width:100%;
+margin-top:30px;
+border-collapse:collapse;
+background:white;
+}
+
+.users-table th,
+.users-table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+.users-table th{
+background:#020617;
+color:white;
+}
+
+.users-table button{
+background:#ef4444;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:4px;
+cursor:pointer;
+}
+
+.main{
+flex:1;
+padding:40px;
+overflow-y:auto;
+}
+
+.user-form{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.user-form input,
+.user-form select{
+padding:8px;
+border-radius:4px;
+border:1px solid #ccc;
+}
+
+.user-form button{
+background:#22c55e;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:4px;
+cursor:pointer;
+}
+
+#search-user{
+margin-top:20px;
+padding:10px;
+width:250px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.dark-mode{
+background:#020617;
+color:white;
+}
+
+.dark-mode .card{
+background:#0f172a;
+color:white;
+}
+
+.dark-mode .users-table{
+background:#0f172a;
+color:white;
+}
+
+.dark-mode .users-table th{
+background:#020617;
+}
+
+.dark-mode canvas{
+background:#0f172a;
+}
+
+.dark-btn{
+margin-top:10px;
+padding:8px 12px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+.sidebar li.active{
+background:#2563eb;
+padding:8px;
+border-radius:5px;
+}
